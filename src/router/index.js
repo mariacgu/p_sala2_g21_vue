@@ -8,6 +8,36 @@ const routes = [
     component: Home
   },
   {
+    path: '/reserva',
+    name: 'Reserva',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Reserva.vue')
+  },
+  {
+    path: '/costa',
+    name: 'Costa',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Costa.vue')
+  },
+  {
+    path: '/boyaca',
+    name: 'Boyaca',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Boyaca.vue')
+  },
+  {
+    path: '/caldas',
+    name: 'Caldas',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Caldas.vue')
+  },
+  {
+    path: '/cundinamarca',
+    name: 'Cundinamarca',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Cundinamarca.vue')
+  },
+  {
+    path: '/santander',
+    name: 'Santander',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Cundinamarca.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
