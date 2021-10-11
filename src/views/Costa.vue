@@ -2,7 +2,9 @@
   <main>
         <br>
         <section>            
-            <h1> <img height="100px" src="simbolo.jpg" alt=""> ECOTURISMO COSTA CARIBE</h1>
+            <h1> 
+                 <img  id="img" src="@/assets/simbolo.jpg" alt="">
+               ECOTURISMO COSTA CARIBE</h1>
 
             <div>
                 El Caribe es una de las regiones más coloridas y alegres del país. Sus playas, sus sabores, sus fiestas,
@@ -17,7 +19,7 @@
                     ¿Qué actividades se pueden desarrollar en la Sierra Nevada de Santa Marta?
                 </h2>
                 <br>
-                <img height="200px" src="sierra_nevada.jpg" alt="">
+                <img  id="img" src="@/assets/sierra_nevada.jpg" alt="">
                 <div>
                     La Sierra Nevada de Santa Marta, en un sistema montañoso, considerado el más alto del mundo a la
                     orilla del mar, ya que sus picos nevados más altos (los Picos Cristóbal Colon y Simón Bolívar)
@@ -31,7 +33,8 @@
                     sus comunidades indígenas que protegen y cuidan la madre naturaleza con una autoridad. Aquí es
                     posible realizar el montañismo, hacer senderos interpretativos y planear recorridos en bicicleta.
                 </div>
-                <img height="200px" src="sierra_nevada1.jpg" alt="">
+                <img  id="img" src="@/assets/sierra_nevada1.jpg" alt="">
+                
             </div>
         </section>
         <section>
@@ -130,3 +133,24 @@
 
     </main>
 </template>
+
+
+<style  scoped>
+   body{
+            padding: 2rem;
+			
+        }
+      
+
+      
+        
+
+
+
+#img {
+
+  width:9rem;
+  height:7rem;
+
+}
+</style>

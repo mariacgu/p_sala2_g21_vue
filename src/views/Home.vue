@@ -16,19 +16,23 @@
 
     </div>
  <div class="contenido">
+   <div>
                        
-                <h2 class="font-effect-shadow-multiple">¿En dónde practicar ecoturismo en Colombia??</h2>
                 
-                <img height="100px" src="assets/sierra_nevada.jpg" alt="">
-				<img height="100px" src="../assets/sierra_nevada1.jpg" alt="">
-				<img height="100px" src="../assets/cascada-matuna.jpg" alt="">
-				<img height="100px" src="../assets/Zarza3.jpg" alt="">
-			
+                
+                
+                <img  id="img" src="@/assets/sierra_nevada.jpg" alt="">
+				<img  id="img" src="@/assets/sierra_nevada1.jpg" alt="">
+				<img id="img" src="@/assets/cascada-matuna.jpg" alt="">
+				<img id="img" src="@/assets/Zarza3.jpg" alt="">
+			</div>
                     
-Colombia es el destino ideal para todos aquellos viajeros que busquen explorar y conocer de cerca las maravillas naturales del mundo. Aunque existen muchos sitios en el país donde puedes practicar el ecoturismo, estos son los más visitados:
 
-
-
+<div>
+  
+  <h2 class="font-effect-shadow-multiple">¿En dónde practicar ecoturismo en Colombia??</h2>
+  Colombia es el destino ideal para todos aquellos viajeros que busquen explorar y conocer de cerca las maravillas naturales del mundo. Aunque existen muchos sitios en el país donde puedes practicar el ecoturismo, estos son los más visitados:
+  <div>
 <li>Parque Nacional Natural Los Nevados</li>
 <li>Isla Gorgona</li>
 <li>Amazonas</li>
@@ -39,7 +43,9 @@ Colombia es el destino ideal para todos aquellos viajeros que busquen explorar y
 <li>Santuario de Fauna y Flora Iguaque</li>
 <li>Parque Nacional Natural Cueva de los Guácharos</li>
 <li>Parque Nacional Natural Corales del Rosario y de San Bernardo</li>
-                </div>
+</div> 
+</div>
+               </div>
 			
 
 </main>
@@ -96,8 +102,17 @@ export default {
     padding: 2rem;
     text-align: left;
     display: grid;
+
+    grid-template-columns: 1fr 3fr ;
 	font-family: Arial;
   font-size: 17px;
   font-family: 'Rancho', serif;
+}
+
+#img {
+
+  width:9rem;
+  height:7rem;
+
 }
 </style>
