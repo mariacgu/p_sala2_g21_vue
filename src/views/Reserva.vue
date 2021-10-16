@@ -49,12 +49,14 @@
                     </tr>
                 </thead>
                 <tbody id="datos_reserva">
-                    <tr v-for="unReserva in listaReservas" :key="unReserva">
+                    <tr v-for="unReserva,i  in listaReservas" :key="unReserva">
                         <td>{{unReserva.cliente}}</td>
                         <td>{{unReserva.paquete}}</td>
                         <td>{{unReserva.ninos}}</td>
                         <td>{{unReserva.personas}}</td>
                         <td>{{unReserva.total}}</td>
+                        <td><button class="btn" @click.prevent="eliminar(unReserva.documento,i)"><i class="fa fa-trash"></i></button></td>
+             
                     </tr>                 
                 </tbody>
             </table>
@@ -67,40 +69,27 @@
 
 <script>
 
+import ReservaService from "@/services/reservas.js"
+import PaqueteService from "@/services/paquetes.js"
+
 export default {
+    mounted(){
+        document.title="Gestion de Reservas";
+        this.listaReservas=ReservaService.obtenerTodos();
+        this.listaPaquetes=PaqueteService.obtenerTodos();
+        this.reserva=ReservaService.obtenerReservaActual();
+         
+    },
+    title:"prueba",
   data(){
       return{
         titulo:"Gestion de reservas",
-        listaPaquetes : ["Sierra Nevada", "Nevado del Ruiz","Salamina","Parque Natural Chicaque","Bioparque La Reserva"],
+        listaPaquetes : [],
         listaPrecios : [300000, 400000,140000,120000,130000],
 
-        listaReservas:[
-        {
-        cliente:"Maria",
-        documento:"3333333",
-		paquete:"Sierra Nevada",
-        personas:2,
-        ninos:0,
-        transporte:50000,
-        total:700000
-        },
-         {
-        cliente:"Laura",
-        documento:"123456789",
-        paquete:"Sierra Nevada",
-        personas:1,
-        ninos:0,
-        transporte:0,
-        total:300000
-        },
-    ],
+        listaReservas:[],
         reserva:{
-            cliente:"",
-            documento:"",
-            paquete:"",
-            personas:0,
-            ninos:0,
-            total:0
+            
 
         },
         paque:0,
@@ -113,6 +102,23 @@ export default {
    
   },
   methods:{
+
+      eliminar(docu,position){
+          this.listaReservas.splice(position,1);
+          console.log(docu);
+          
+      },
+      limpiarFormulario(){
+          this.reserva= {
+          cliente:"",
+            documento:"",
+            paquete:"",
+            personas:0,
+            ninos:0,
+            total:0
+          }
+          
+      },
       procesarInformacion(){
           console.log(this.paque);
           this.reserva.paquete = this.listaPaquetes[this.paque-1];
@@ -131,6 +137,8 @@ export default {
           }
           console.log(this.listaPrecios[this.paque-1]);
           this.listaReservas.push(this.reserva);
+          this.limpiarFormulario();
+          //this.$router.push({name:"Home",params:{datos:this.listaReservas}});
           
       }
   }
@@ -177,20 +185,5 @@ export default {
 		
 	.button_sesion {border-radius: 25px;}
 
-.bg-img {
- 
-  background-color: white;
-  min-height: 380px;
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  text-align:left;font-family: 'Rancho', serif;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-  color: #f1f1f1;
-  
-  padding: 20px;
-}
 </style>
